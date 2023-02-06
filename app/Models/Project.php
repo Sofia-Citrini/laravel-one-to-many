@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Type;
+
 class Project extends Model
 {
     use HasFactory;
@@ -14,6 +16,10 @@ class Project extends Model
         'description',
         'image',
         'link_github',
-        'user_id'
+        'type_id'
     ];
+
+    public function type(){
+        return $this->belongsTo(Type::class);
+    }
 }

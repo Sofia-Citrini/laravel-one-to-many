@@ -27,7 +27,8 @@ class StoreProjectRequest extends FormRequest
             'title' => 'required',
             'description' => 'required|string',
             'image' => 'required|image',
-            'link_github' => 'url'
+            'link_github' => 'url',
+            'type_id' => 'nullable|exists:types,id'
         ];
     }
 }

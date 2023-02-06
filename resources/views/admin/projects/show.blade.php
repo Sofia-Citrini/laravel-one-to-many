@@ -6,6 +6,7 @@
     <div class="col-md-8">
         <div class="card flex-row my-5">
             <div class="img-container">
+                {{-- @dump($project->image) --}}
                 <img src="{{asset('storage/' . $project->image)}}" class="card-img-top img-fluid" >
             </div>
             
@@ -14,6 +15,10 @@
                 <h3 class="card-title py-4">{{$project->title}}</h3>
                 <p class="card-text">{{$project->description}}</p>
                 <a href="{{$project->link_github}}" class="d-block">Codice GitHub</a>
+
+                <div>
+                    Type:  {{$project->type ? $project->type->name : '-nessuna categoria scelta-'}}
+                </div>
         
                 <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-outline-primary mt-5 mb-3">Modifica progetto</a>
         
