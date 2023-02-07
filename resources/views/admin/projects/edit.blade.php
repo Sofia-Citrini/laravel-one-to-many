@@ -40,7 +40,7 @@
                     <select class="form-select" @error('type_id') is-invalid @enderror" name="type_id">
                         <option>Open this select menu</option>
                         @foreach ($types as $type)
-                            <option value={{ $type->id }}>{{ $type->name }}</option>
+                            <option value={{ $type->id }} {{ $type->id === old("type", $project->type_id) ? 'selected' : '' }}>{{ $type->name }}</option>
                         @endforeach
                     </select>
 
@@ -53,7 +53,7 @@
 
                 <div class="mb-3">
                     <label class="form-label">Immagine</label>
-                    <input type="file" class="form-control @error('image') is-invalid @elseif(old('image')) is-valid @enderror" name="image">
+                    <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
 
                     @error('image')
                         <div class="invalid-feedback">
