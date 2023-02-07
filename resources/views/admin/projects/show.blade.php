@@ -16,9 +16,12 @@
                 <p class="card-text">{{$project->description}}</p>
                 <a href="{{$project->link_github}}" class="d-block">Codice GitHub</a>
 
+                @if($project->type)
                 <div>
-                    Type:  {{$project->type ? $project->type->name : '-nessuna categoria scelta-'}}
+                    Type: {{$project->type->name}}
                 </div>
+                @endif
+                
         
                 <a href="{{route('admin.projects.edit', $project->id)}}" class="btn btn-outline-primary mt-5 mb-3">Modifica progetto</a>
         
