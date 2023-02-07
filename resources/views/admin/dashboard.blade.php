@@ -37,6 +37,19 @@
                 <a href="{{route('admin.projects.create')}}" class="btn btn-outline-danger">Pubblica un nuovo progetto</a>
             </div>
         </div>
+
+        <div class="col-md-8 d-flex gap-5">
+            <div class="d-inline-flex flex-column justify-content-center align-items-center my-4">
+                <div class="h3">{{$types}}</div>
+                <div>Tipologie</div>
+            </div>
+    
+            <div class="my-4 d-flex flex-column">
+                <a href="{{route('admin.types.index')}}" class="btn btn-outline-danger mb-3">Tutti le tipologie</a>
+
+                <a href="{{route('admin.types.create')}}" class="btn btn-outline-danger">Crea una nuova tipologia</a>
+            </div>
+        </div>
         
     </div>
 </div>
