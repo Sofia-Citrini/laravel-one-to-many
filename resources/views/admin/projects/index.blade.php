@@ -11,6 +11,7 @@
         <tr>
           <th scope="col">Nome</th>
           <th scope="col">Descrizione</th>
+          <th scope="col">Tipologia</th>
           <th scope="col">Immagine</th>
           <th scope="col">Link GitHub</th>
           <th scope="col">Modifica</th>
@@ -22,6 +23,7 @@
             <tr>
                 <td><a href="{{route('admin.projects.show', $project->id)}}">{{$project->title}}</a></td>
                 <td>{{Str::limit($project->description, 60)}}</td>
+                <td>{{$project->type->name}}</td>
                 <td><img src="{{asset('storage/' . $project->image)}}" style="width:50px" alt=""></td>
                 <td><a href="">{{$project->link_github}}</a></td>
                 <td><a href="{{route('admin.projects.edit', $project->id)}}" class="text-decoration-none btn btn-outline-dark">&#10002;</a></td>
