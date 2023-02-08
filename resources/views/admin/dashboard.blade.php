@@ -54,6 +54,3 @@
     </div>
 </div>
 @endsection
-
-
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit explicabo reprehenderit expedita officia ullam ipsam consequuntur tenetur, ut cumque aut. Magnam, eaque ducimus sapiente pariatur sequi nostrum aspernatur ipsam quaerat?

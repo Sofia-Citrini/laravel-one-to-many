@@ -20,7 +20,10 @@
         <div class="ms-4">
             <h3 class="card-title py-4">{{$project->title}}</h3>
             <p class="card-text">{{$project->description}}</p>
-            <a href="{{$project->link_github}}" class="d-block">Codice GitHub</a>
+
+            @if($project->link_github)
+                <a href="{{$project->link_github}}" class="d-block">Codice GitHub</a>
+            @endif
 
             @if($project->type)
                 <div class="py-3">
