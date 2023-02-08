@@ -18,7 +18,7 @@
       <tbody>
         @foreach ($types as $type)
             <tr>
-              <td><a href="{{route('admin.types.show', $type->id)}}">{{$type->name}}</a></td>
+              <td><a href="{{route('admin.types.show', $type->id)}}">{{Str::title($type->name)}}</a></td>
               <td>{{Str::limit($type->description, 60)}}</td>
               <td>
                 <a href="{{route('admin.types.edit', $type->id)}}" class="text-decoration-none btn btn-outline-dark">
