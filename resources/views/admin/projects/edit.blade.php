@@ -38,7 +38,7 @@
                 <div class="mb-3">
                     <label class="form-label">Tipologia progetto</label>
                     <select class="form-select" @error('type_id') is-invalid @enderror" name="type_id">
-                        <option>Open this select menu</option>
+                        <option disabled selected>Open this select menu</option>
                         @foreach ($types as $type)
                             <option value={{ $type->id }} {{ $type->id === old("type", $project->type_id) ? 'selected' : '' }}>{{ $type->name }}</option>
                         @endforeach
