@@ -23,7 +23,7 @@
             <tr>
                 <td><a href="{{route('admin.projects.show', $project->id)}}">{{$project->title}}</a></td>
                 <td>{{Str::limit($project->description, 60)}}</td>
-                <td>{{Str::upper($project->type->name)}}</td>
+                <td>{{$project->type ? Str::upper($project->type->name) : '/'}}</td>
                 <td><img src="{{asset('storage/' . $project->image)}}" style="width:50px" alt=""></td>
                 <td><a href="">{{($project->link_github)}}</a></td>
                 <td>
