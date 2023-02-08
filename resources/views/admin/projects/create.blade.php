@@ -22,7 +22,7 @@
 
                 <div class="mb-3">
                     <label class="form-label">Descrizione</label>
-                    <textarea class="form-control @error('description') is-invalid @enderror" name="description"> {{old('description')}}</textarea>
+                    <textarea class="form-control @error('description') is-invalid @elseif(old('description')) is-valid @enderror" name="description"> {{old('description')}}</textarea>
 
                     @error('description')
                         <div class="invalid-feedback">
@@ -39,11 +39,17 @@
                             <option value={{ $type->id }}>{{ $type->name }}</option>
                         @endforeach
                     </select>
+
+                    @error('type_id')
+                        <div class="invalid-feedback">
+                            {{$message}}
+                        </div>
+                    @enderror
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">Immagine</label>
-                    <input type="file" class="form-control @error('image') is-invalid @elseif(old('image')) is-valid @enderror" name="image">
+                    <input type="file" class="form-control @error('image') is-invalid @enderror" name="image">
 
                     @error('image')
                         <div class="invalid-feedback">

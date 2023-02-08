@@ -22,7 +22,9 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        // $projects = Project::all();
+        $projects = Project::where('user_id', Auth::user()->id)->get(); 
+
         return view('admin.projects.index', compact("projects"));
     }
 
@@ -56,6 +58,7 @@ class ProjectController extends Controller
         $project = Project::create([
             ...$data,
             "image" => $img_path ?? '',
+            "user_id" => Auth::id()
         ]);
 
         return redirect()->route('admin.projects.show', $project->id);

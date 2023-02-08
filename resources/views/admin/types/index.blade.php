@@ -20,14 +20,19 @@
             <tr>
               <td><a href="{{route('admin.types.show', $type->id)}}">{{$type->name}}</a></td>
               <td>{{Str::limit($type->description, 60)}}</td>
-              <td><a href="{{route('admin.types.edit', $type->id)}}" class="text-decoration-none btn btn-outline-dark">MODIFICA</a></td>
+              <td>
+                <a href="{{route('admin.types.edit', $type->id)}}" class="text-decoration-none btn btn-outline-dark">
+                  <i class="fa-solid fa-pencil"></i>
+                  Modifica
+                </a>
+              </td>
               <td>
                   <form action="{{route('admin.types.destroy', $type->id)}}" method="POST" class="d-inline-block delete-form">
                     @csrf
         
                     @method('delete')
         
-                    <button class="btn btn-danger">ELIMINA</button>
+                    <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i>Elimina</button>
                   </form>
               </td>  
             </tr>

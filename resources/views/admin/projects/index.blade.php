@@ -4,7 +4,7 @@
 
 <h3 class="text-center pt-5 pb-4">Tutti i progetti</h3>
 
-<a href="{{route('admin.projects.create')}}" class="btn btn-danger mb-5">+ Aggiungi progetto</a>
+<a href="{{route('admin.projects.create')}}" class="btn btn-danger mb-5"><i class="fa-solid fa-plus"></i> Aggiungi progetto</a>
 
 <table class="table table-striped">
     <thead>
@@ -23,17 +23,21 @@
             <tr>
                 <td><a href="{{route('admin.projects.show', $project->id)}}">{{$project->title}}</a></td>
                 <td>{{Str::limit($project->description, 60)}}</td>
-                <td>{{$project->type->name}}</td>
+                <td>{{Str::upper($project->type->name)}}</td>
                 <td><img src="{{asset('storage/' . $project->image)}}" style="width:50px" alt=""></td>
-                <td><a href="">{{$project->link_github}}</a></td>
-                <td><a href="{{route('admin.projects.edit', $project->id)}}" class="text-decoration-none btn btn-outline-dark">&#10002;</a></td>
+                <td><a href="">{{($project->link_github)}}</a></td>
+                <td>
+                  <a href="{{route('admin.projects.edit', $project->id)}}" class="text-decoration-none btn btn-outline-dark">
+                    <i class="fa-solid fa-pencil"></i>
+                  </a>
+                </td>
                 <td>
                     <form action="{{route('admin.projects.destroy', $project->id)}}" method="POST" class="d-inline-block delete-form">
                       @csrf
           
                       @method('delete')
           
-                      <button class="btn btn-danger">&#128465;</button>
+                      <button class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
                     </form>
                 </td>
             </tr>

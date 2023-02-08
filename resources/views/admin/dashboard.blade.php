@@ -21,7 +21,7 @@
         </div>
 
         <div class="col-md-8 mt-5">
-            <h3>{{Auth::user()->name}}</h3>
+            <h3>{{Str::title(Auth::user()->name)}}</h3>
         </div>
 
 
@@ -45,7 +45,7 @@
             </div>
     
             <div class="my-4 d-flex flex-column">
-                <a href="{{route('admin.types.index')}}" class="btn btn-outline-danger mb-3">Tutti le tipologie</a>
+                <a href="{{route('admin.types.index')}}" class="btn btn-outline-danger mb-3">Tutte le tipologie</a>
 
                 <a href="{{route('admin.types.create')}}" class="btn btn-outline-danger">Crea una nuova tipologia</a>
             </div>
@@ -54,3 +54,6 @@
     </div>
 </div>
 @endsection
+
+
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit explicabo reprehenderit expedita officia ullam ipsam consequuntur tenetur, ut cumque aut. Magnam, eaque ducimus sapiente pariatur sequi nostrum aspernatur ipsam quaerat?
